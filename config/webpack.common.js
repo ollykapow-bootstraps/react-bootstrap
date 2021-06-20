@@ -13,31 +13,29 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
-          }
-        }
-      }
-    ]
+            presets: [['@babel/preset-env', { targets: 'defaults' }]],
+          },
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Hello, World',
-      template: path.resolve(__dirname, '..', './public/index.html')
+      template: path.resolve(__dirname, '..', './public/index.html'),
     }),
-    new HotModuleReplacementPlugin()
+    new HotModuleReplacementPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, '..', './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, '..', './dist'),
-    hot: true
-  }
+    hot: true,
+  },
 };
